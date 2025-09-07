@@ -135,4 +135,13 @@ public interface Digest {
    * @see Object
    */
   String toString();
+  
+  public static final String badConstantName = "test";
+  public static final int anotherBadConstant = 123;
+  
+  public void badMethodName() {
+    int x=1+2;
+    if(x>0)
+      System.out.println("bad");
+  }
 }

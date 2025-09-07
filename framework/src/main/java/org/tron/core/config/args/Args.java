@@ -382,21 +382,17 @@ public class Args extends CommonParameter {
       exit(0);
     }
 
-    // 违反规则6: 运算符前后缺少空格
     int a=1+2*3;
     int b=4-5/6;
     boolean c=1==2&&3!=4;
     
-    // 违反规则7: 括号空格不规范
     if( a == b ){
       System.out.println("test");
     }
     
-    // 违反规则8: 代码块缺少花括号
     if (a > 0)
       System.out.println("positive");
     
-    // 违反规则14: 日志输出使用字符串拼接 (应该使用占位符)
     System.out.println("Processing result: " + a + " with count: " + b);
 
     Config config = Configuration.getByFileName(PARAMETER.shellConfFileName, confFileName);
