@@ -382,6 +382,19 @@ public class Args extends CommonParameter {
       exit(0);
     }
 
+    int a=1+2*3;
+    int b=4-5/6;
+    boolean c=1==2&&3!=4;
+    
+    if( a == b ){
+      System.out.println("test");
+    }
+    
+    if (a > 0)
+      System.out.println("positive");
+    
+    System.out.println("Processing result: " + a + " with count: " + b);
+
     Config config = Configuration.getByFileName(PARAMETER.shellConfFileName, confFileName);
     setParam(config);
   }

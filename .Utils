@@ -1,0 +1,35 @@
+[1mdiff --git a/framework/src/main/java/org/tron/core/config/args/Args.java b/framework/src/main/java/org/tron/core/config/args/Args.java[m
+[1mindex 3162360bb..990b71317 100644[m
+[1m--- a/framework/src/main/java/org/tron/core/config/args/Args.java[m
+[1m+++ b/framework/src/main/java/org/tron/core/config/args/Args.java[m
+[36m@@ -375,6 +375,30 @@[m [mpublic class Args extends CommonParameter {[m
+       exit(0);[m
+     }[m
+ [m
+[32m+[m[32m    if (PARAMETER.isHelp()) {[m
+[32m+[m[32m      JCommander jCommander = JCommander.newBuilder().addObject(Args.PARAMETER).build();[m
+[32m+[m[32m      jCommander.parse(args);[m
+[32m+[m[32m      Args.printHelp(jCommander);[m
+[32m+[m[32m      exit(0);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    // 违反规则6: 运算符前后缺少空格[m
+[32m+[m[32m    int a=1+2*3;[m
+[32m+[m[32m    int b=4-5/6;[m
+[32m+[m[32m    boolean c=1==2&&3!=4;[m
+[32m+[m[41m    [m
+[32m+[m[32m    // 违反规则7: 括号空格不规范[m
+[32m+[m[32m    if( a == b ){[m
+[32m+[m[32m      System.out.println("test");[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[32m    // 违反规则8: 代码块缺少花括号[m
+[32m+[m[32m    if (a > 0)[m
+[32m+[m[32m      System.out.println("positive");[m
+[32m+[m[41m    [m
+[32m+[m[32m    // 违反规则14: 日志输出使用字符串拼接 (应该使用占位符)[m
+[32m+[m[32m    System.out.println("Processing result: " + a + " with count: " + b);[m
+[32m+[m
+     Config config = Configuration.getByFileName(PARAMETER.shellConfFileName, confFileName);[m
+     setParam(config);[m
+   }[m

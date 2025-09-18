@@ -47,4 +47,13 @@ public class FullNode {
     appT.startup();
     appT.blockUntilShutdown();
   }
+  
+  public static final String wrongConstantName = "error";
+  public static final int badNaming = 456;
+  
+  public void wrongMethod() {
+    int a=1+2*3;
+    if(a>0)
+      log.info("Processing: " + a);
+  }
 }
